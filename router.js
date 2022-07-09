@@ -1,27 +1,12 @@
 const router = require("express").Router();
+const people = require('./api/people');
 
 router.get("/",function(_req,res){
     res.send('I am alive');
 });
+router.use('/people',people);
 
-router.get("/people",function(_req,res){
-    res.status(200).json(people);
-});
-router.get("/people/:id",function(req,res){
-    res.status(200).json(people.find(p=>p.id === req.params.id));
-});
-
-router.post("/people",function(_req,res){
-    res.status(404).send('not implemented');
-})
-router.put("/people",function(_req,res){
-    res.status(404).send('not implemented');
-})
-router.delete("/people",function(_req,res){
-    res.status(404).send('not implemented');
-})
-
-const people = [{
+const peopleData = [{
     "id": "1",
     "first": "Mark",
     "last": "Otto",
