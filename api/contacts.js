@@ -4,10 +4,11 @@ const router = require("express").Router();
 
 const contactSchema = new Schema({
     id:  String,
+    personId: String,
     name: String,
     phone: String,
   });
-const contactModel = model('Contacts',contactSchema);
+const contactModel = model('Contacts',contactSchema,collection= 'contacts');
 
 const contact = {
     async add(data){
@@ -26,7 +27,12 @@ const contact = {
         return await contactModel.findOne({id: id});
     },
     async update(id,data){
-        return await contactModel.updateOne({id: id},{data})
+        const update = {
+            personId: data.personId,
+            name: data.name,
+            phone: data.phone
+        };
+        return await contactModel.findOneAndUpdate({id: id},update)
     }
 }
 
@@ -40,7 +46,7 @@ router.get("/:id",async function(req,res){
     res.status(200).json(await contact.get(req.params.id));
 });
 router.put("/:id",async function(req,res){
-    res.status(200).json(await contact.update(req.body.id,req.body.data));
+    res.status(200).json(await contact.update(req.body.id,req.body));
 })
 router.delete("/:id",async function(req,res){
     res.status(200).json(await contact.delete(req.params.id));

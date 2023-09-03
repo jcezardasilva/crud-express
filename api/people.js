@@ -8,7 +8,7 @@ const peopleSchema = new Schema({
     last: String,
     handle: String
   });
-const peopleModel = model('People',peopleSchema);
+const peopleModel = model('People',peopleSchema,collection = 'people');
 
 const people = {
     async add(data){
@@ -28,7 +28,6 @@ const people = {
     },
     async update(id,data){
         const update = {
-            id: id,
             first: data.first,
             last: data.last,
             handle: data.handle
