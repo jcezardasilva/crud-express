@@ -14,7 +14,7 @@ const PORT = process.env.PORT;
 app.locals.mongoose = mongoose.connect(process.env.DB_CONNECTION);
 
 const corsOptions = {
-    origin: 'http://localhost:8081',
+    origin: 'http://localhost:8080',
     optionsSuccessStatus: 200
   }
 app.use(cors(corsOptions));
@@ -24,7 +24,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
 app.use("/api",router);
-
 
 http.listen(PORT, function () {
     console.log('server: http://localhost:' + PORT);

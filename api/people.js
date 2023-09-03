@@ -13,9 +13,9 @@ const peopleModel = model('People',peopleSchema);
 const people = {
     async add(data){
         data.id = uuidv4();
-        const person = new peopleModel(data);
-        await person.save();
-        return person;
+        const entity = new peopleModel(data);
+        await entity.save();
+        return entity;
     },
     async delete(id){
         return await peopleModel.deleteOne({id: id});
@@ -27,7 +27,31 @@ const people = {
         return await peopleModel.findOne({id: id});
     },
     async update(id,data){
-        return await peopleModel.updateOne({id: id},{data})
+        const update = {
+            id: id,
+            first: data.first,
+            last: data.last,
+            handle: data.handle
+        }
+        return await peopleModel.findOneAndUpdate({id: id},update)
+    },
+    async getAllLocal(){
+        return [{
+            "id": "1",
+            "first": "Mark",
+            "last": "Otto",
+            "handle": "@mdo"
+        },{
+            "id": "2",
+            "first": "Jacob",
+            "last": "Thornton",
+            "handle": "@fat"
+        },{
+            "id": "3",
+            "first": "Larry",
+            "last": "Bird",
+            "handle": "@twitter"
+        }];
     }
 }
 
@@ -41,9 +65,9 @@ router.get("/:id",async function(req,res){
     res.status(200).json(await people.get(req.params.id));
 });
 router.put("/:id",async function(req,res){
-    res.status(200).json(await people.update(req.body.id,req.body.data));
+    res.status(200).json(await people.update(req.body.id,req.body));
 })
-router.delete("/:id",async function(_req,res){
+router.delete("/:id",async function(req,res){
     res.status(200).json(await people.delete(req.params.id));
 })
 
