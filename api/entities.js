@@ -9,6 +9,7 @@ const fieldSchema = new Schema({
     inputType: String,
     required: Boolean,
     visibleOnForm: Boolean,
+    visibleOnTable: Boolean
 });
 const entitySchema = new Schema({
     id:  String,
@@ -20,10 +21,10 @@ const entityModel = model('Entities',entitySchema,collection= 'entities');
 
 const entity = {
     async add(data){
-        data.id = uuidv4();
-        const person = new entityModel(data);
-        await person.save();
-        return person;
+        data.id = data.id || uuidv4();
+        const entity = new entityModel(data);
+        await entity.save();
+        return entity;
     },
     async delete(id){
         return await entityModel.deleteOne({id: id});

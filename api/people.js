@@ -6,7 +6,7 @@ const peopleSchema = new Schema({
     id:  String,
     first: String,
     last: String,
-    handle: String
+    description: String
   });
 const peopleModel = model('People',peopleSchema,collection = 'people');
 
