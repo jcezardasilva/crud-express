@@ -30,27 +30,9 @@ const people = {
         const update = {
             first: data.first,
             last: data.last,
-            handle: data.handle
+            description: data.description
         }
         return await peopleModel.findOneAndUpdate({id: id},update)
-    },
-    async getAllLocal(){
-        return [{
-            "id": "1",
-            "first": "Mark",
-            "last": "Otto",
-            "handle": "@mdo"
-        },{
-            "id": "2",
-            "first": "Jacob",
-            "last": "Thornton",
-            "handle": "@fat"
-        },{
-            "id": "3",
-            "first": "Larry",
-            "last": "Bird",
-            "handle": "@twitter"
-        }];
     }
 }
 

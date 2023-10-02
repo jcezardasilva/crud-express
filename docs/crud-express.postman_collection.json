@@ -1,0 +1,628 @@
+{
+	"info": {
+		"_postman_id": "d265a56d-1411-44ec-addd-8ece4a6f3b96",
+		"name": "crud-express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3097695"
+	},
+	"item": [
+		{
+			"name": "Entities",
+			"item": [
+				{
+					"name": "Add Entity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"3\",\r\n    \"name\": \"EntityFields\",\r\n    \"path\": \"/entityfields\",\r\n    \"fields\": [\r\n        {\r\n            \"name\": \"name\",\r\n            \"label\": \"Name\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"label\",\r\n            \"label\": \"Label\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"dataType\",\r\n            \"label\": \"Data Type\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"inputType\",\r\n            \"label\": \"Input Type\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"required\",\r\n            \"label\": \"Required\",\r\n            \"dataType\": \"bool\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"visibleOnForm\",\r\n            \"label\": \"Visible On Form\",\r\n            \"dataType\": \"bool\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"visibleOnTable\",\r\n            \"label\": \"Visible On Table\",\r\n            \"dataType\": \"bool\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/entities",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Entity - Entity",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"1\",\r\n    \"name\": \"Entities\",\r\n    \"path\": \"/entities\",\r\n    \"fields\": [\r\n        {\r\n            \"name\": \"id\",\r\n            \"label\": \"Id\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"name\",\r\n            \"label\": \"Name\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"path\",\r\n            \"label\": \"Path\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"fields\",\r\n            \"label\": \"Fields\",\r\n            \"dataType\": \"object[]\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": false,\r\n            \"visibleOnTable\": true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/entities",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"entities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8080"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "734"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2de-p3jVCpFtko/v/vtaDEnmInL0FzE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 00:39:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"1\",\n    \"name\": \"Entities\",\n    \"path\": \"/entities\",\n    \"fields\": [\n        {\n            \"name\": \"id\",\n            \"label\": \"Id\",\n            \"dataType\": \"string\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1144063109d3f05b2aba\"\n        },\n        {\n            \"name\": \"name\",\n            \"label\": \"Name\",\n            \"dataType\": \"string\",\n            \"inputType\": \"text\",\n            \"required\": false,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1144063109d3f05b2abb\"\n        },\n        {\n            \"name\": \"path\",\n            \"label\": \"Path\",\n            \"dataType\": \"string\",\n            \"inputType\": \"text\",\n            \"required\": false,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1144063109d3f05b2abc\"\n        },\n        {\n            \"name\": \"fields\",\n            \"label\": \"Fields\",\n            \"dataType\": \"object[]\",\n            \"required\": false,\n            \"visibleOnForm\": false,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1144063109d3f05b2abd\"\n        }\n    ],\n    \"_id\": \"651a1144063109d3f05b2ab9\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "Add Entity - EntityFields",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"3\",\r\n    \"name\": \"EntityFields\",\r\n    \"path\": \"/entityfields\",\r\n    \"fields\": [\r\n        {\r\n            \"name\": \"name\",\r\n            \"label\": \"Name\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"label\",\r\n            \"label\": \"Label\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"data_type\",\r\n            \"label\": \"Data Type\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"input_type\",\r\n            \"label\": \"Input Type\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"required\",\r\n            \"label\": \"Required\",\r\n            \"dataType\": \"bool\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"visible_on_form\",\r\n            \"label\": \"Visible On Form\",\r\n            \"dataType\": \"bool\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"visible_on_table\",\r\n            \"label\": \"Visible On Table\",\r\n            \"dataType\": \"bool\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/entities",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"entities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:8080"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Embedder-Policy",
+									"value": "require-corp"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1313"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"521-XEnl9bKbH5wVZaxazrH4nEj/D18\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Oct 2023 00:43:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"3\",\n    \"name\": \"EntityFields\",\n    \"path\": \"/entityfields\",\n    \"fields\": [\n        {\n            \"name\": \"name\",\n            \"label\": \"Name\",\n            \"dataType\": \"string\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1248063109d3f05b2ac9\"\n        },\n        {\n            \"name\": \"label\",\n            \"label\": \"Label\",\n            \"dataType\": \"string\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1248063109d3f05b2aca\"\n        },\n        {\n            \"name\": \"data_type\",\n            \"label\": \"Data Type\",\n            \"dataType\": \"string\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1248063109d3f05b2acb\"\n        },\n        {\n            \"name\": \"input_type\",\n            \"label\": \"Input Type\",\n            \"dataType\": \"string\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1248063109d3f05b2acc\"\n        },\n        {\n            \"name\": \"required\",\n            \"label\": \"Required\",\n            \"dataType\": \"bool\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1248063109d3f05b2acd\"\n        },\n        {\n            \"name\": \"visible_on_form\",\n            \"label\": \"Visible On Form\",\n            \"dataType\": \"bool\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1248063109d3f05b2ace\"\n        },\n        {\n            \"name\": \"visible_on_table\",\n            \"label\": \"Visible On Table\",\n            \"dataType\": \"bool\",\n            \"inputType\": \"text\",\n            \"required\": true,\n            \"visibleOnForm\": true,\n            \"visibleOnTable\": true,\n            \"_id\": \"651a1248063109d3f05b2acf\"\n        }\n    ],\n    \"_id\": \"651a1248063109d3f05b2ac8\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Entity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/entities/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Entities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/entities",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Entity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/entities/907bf86a-6bc2-4baf-b422-215646b71600",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities",
+								"907bf86a-6bc2-4baf-b422-215646b71600"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Entity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"name\": \"Entities\",\r\n    \"path\": \"/entities\",\r\n    \"fields\": [{\r\n        \"name\": \"id\",\r\n        \"label\": \"Id\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": true,\r\n        \"visibleOnForm\": false,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"name\",\r\n        \"label\": \"Name\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"path\",\r\n        \"label\": \"Path\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"fields\",\r\n        \"label\": \"Fields\",\r\n        \"dataType\": \"EntityFields[]\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": false,\r\n        \"visibleOnTable\": true\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/entities/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "People",
+			"item": [
+				{
+					"name": "Add Person",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"name\": \"People\",\r\n    \"path\": \"/people\",\r\n    \"fields\": [\r\n        {\r\n            \"name\": \"id\",\r\n            \"label\": \"Id\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"first\",\r\n            \"label\": \"First\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"last\",\r\n            \"label\": \"Last\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"description\",\r\n            \"label\": \"Description\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"textarea\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/entities",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/people/a443da50-64a5-4ecc-bcc3-14b2bb55e139",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people",
+								"a443da50-64a5-4ecc-bcc3-14b2bb55e139"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get People",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/people",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/people/78a11b16-cf31-4171-9602-0c4c0b550812",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people",
+								"78a11b16-cf31-4171-9602-0c4c0b550812"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"name\": \"Entities\",\r\n    \"path\": \"/entities\",\r\n    \"fields\": [{\r\n        \"name\": \"id\",\r\n        \"label\": \"Id\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": true,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"name\",\r\n        \"label\": \"Name\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"path\",\r\n        \"label\": \"Path\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"fields\",\r\n        \"label\": \"Fields\",\r\n        \"dataType\": \"object[]\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": false,\r\n        \"visibleOnTable\": true\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/entities/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EntityFields",
+			"item": [
+				{
+					"name": "Add Field",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"name\": \"People\",\r\n    \"path\": \"/people\",\r\n    \"fields\": [\r\n        {\r\n            \"name\": \"id\",\r\n            \"label\": \"Id\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": true,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"first\",\r\n            \"label\": \"First\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"last\",\r\n            \"label\": \"Last\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"text\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        },\r\n        {\r\n            \"name\": \"description\",\r\n            \"label\": \"Description\",\r\n            \"dataType\": \"string\",\r\n            \"inputType\": \"textarea\",\r\n            \"required\": false,\r\n            \"visibleOnForm\": true,\r\n            \"visibleOnTable\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/entities",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/people/a443da50-64a5-4ecc-bcc3-14b2bb55e139",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people",
+								"a443da50-64a5-4ecc-bcc3-14b2bb55e139"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Fields",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/entityfields",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entityfields"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/people/78a11b16-cf31-4171-9602-0c4c0b550812",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people",
+								"78a11b16-cf31-4171-9602-0c4c0b550812"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"name\": \"Entities\",\r\n    \"path\": \"/entities\",\r\n    \"fields\": [{\r\n        \"name\": \"id\",\r\n        \"label\": \"Id\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": true,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"name\",\r\n        \"label\": \"Name\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"path\",\r\n        \"label\": \"Path\",\r\n        \"dataType\": \"string\",\r\n        \"inputType\": \"text\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": true,\r\n        \"visibleOnTable\": true\r\n    },{\r\n        \"name\": \"fields\",\r\n        \"label\": \"Fields\",\r\n        \"dataType\": \"object[]\",\r\n        \"required\": false,\r\n        \"visibleOnForm\": false,\r\n        \"visibleOnTable\": true\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/entities/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"entities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8081",
+			"type": "string"
+		}
+	]
+}
