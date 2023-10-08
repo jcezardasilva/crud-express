@@ -10,7 +10,8 @@ const fieldSchema = new Schema({
     inputType: String,
     required: Boolean,
     visibleOnForm: Boolean,
-    visibleOnTable: Boolean
+    visibleOnTable: Boolean,
+    isKey: Boolean
 });
 const entityModel = model('EntityFields',fieldSchema,collection= 'entity_fields');
 
@@ -60,4 +61,4 @@ router.delete("/:id",async function(req,res){
     res.status(200).json(await entity.delete(req.params.id));
 })
 
-module.exports = router;
+module.exports = {router,fieldSchema};

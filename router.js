@@ -2,7 +2,7 @@ const router = require("express").Router();
 const people = require('./api/people');
 const contacts = require('./api/contacts');
 const entities = require('./api/entities');
-const entityFields = require('./api/entityFields');
+const entityFields = require('./api/entityFields').router;
 
 router.get("/",function(_req,res){
     res.send('I am alive');

@@ -1,21 +1,14 @@
 const { Schema, model } = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
 const router = require("express").Router();
+const {fieldSchema} = require('./entityFields');
 
-const fieldSchema = new Schema({
-    name: String,
-    label: String,
-    dataType: String,
-    inputType: String,
-    required: Boolean,
-    visibleOnForm: Boolean,
-    visibleOnTable: Boolean
-});
 const entitySchema = new Schema({
     id:  String,
     name: String,
     path: String,
-    fields: [fieldSchema]
+    fields: [fieldSchema],
+    type: String
   });
 const entityModel = model('Entities',entitySchema,collection= 'entities');
 
@@ -39,7 +32,8 @@ const entity = {
         const update = {
             name: data.name,
             path: data.path,
-            fields: data.fields
+            fields: data.fields,
+            type: data.type
         }
         return await entityModel.findOneAndUpdate({id: id},update)
     }
