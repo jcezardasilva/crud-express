@@ -8,7 +8,8 @@ const entitySchema = new Schema({
     name: String,
     path: String,
     fields: [fieldSchema],
-    type: String
+    type: String,
+    isReadonly: Boolean
   });
 const entityModel = model('Entities',entitySchema,collection= 'entities');
 
@@ -33,7 +34,8 @@ const entity = {
             name: data.name,
             path: data.path,
             fields: data.fields,
-            type: data.type
+            type: data.type,
+            isReadonly: data.isReadonly
         }
         return await entityModel.findOneAndUpdate({id: id},update)
     }
