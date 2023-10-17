@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
 const router = require("express").Router();
+const { calcSkip } = require('../core/skipper');
 
 const peopleSchema = new Schema({
     id:  String,
@@ -20,8 +21,8 @@ const people = {
     async delete(id){
         return await peopleModel.deleteOne({id: id});
     },
-    async getAll(){
-        return await peopleModel.find().limit(100);
+    async list(page=1,pageSize=100){
+        return await peopleModel.find({},null,{skip: calcSkip(page,pageSize),limit: pageSize});
     },
     async get(id){
         return await peopleModel.findOne({id: id});
@@ -36,8 +37,8 @@ const people = {
     }
 }
 
-router.get("/",async function(_req,res){
-    res.status(200).json(await people.getAll());
+router.get("/",async function(req,res){
+    res.status(200).json(await people.list(req.query["page"],req.query["pageSize"]));
 });
 router.post("/",async function(req,res){
     res.status(200).json(await people.add(req.body));
