@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const router = require("./router");
+const router = require("./api/router");
 require('dotenv').config();
 
 const PORT = process.env.PORT;

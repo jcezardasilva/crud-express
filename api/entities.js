@@ -1,34 +1,27 @@
-const { Schema, model } = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
 const router = require("express").Router();
-const {fieldSchema} = require('./entityFields');
+const {EntityModel} = require("../models/entities");
 const { calcSkip } = require('../core/skipper');
-
-const entitySchema = new Schema({
-    id:  String,
-    name: String,
-    path: String,
-    fields: [fieldSchema],
-    type: String,
-    isReadonly: Boolean
-  });
-const entityModel = model('Entities',entitySchema,collection= 'entities');
 
 const entity = {
     async add(data){
         data.id = data.id || uuidv4();
         const entity = new entityModel(data);
         await entity.save();
-        return entity;
+        let response = {};
+        for(const field of entity.fields){
+            response[field.name] = entity[field.name];
+        }
+        return response;
     },
     async delete(id){
-        return await entityModel.deleteOne({id: id});
+        return await EntityModel.deleteOne({id: id});
     },
     async list(page=1,pageSize=100){
-        return await contactModel.find({},null,{skip: calcSkip(page,pageSize),limit: pageSize});
+        return await EntityModel.find({},{_id:0, __v: 0, "fields._id": 0},{skip: calcSkip(page,pageSize),limit: pageSize});
     },
     async get(id){
-        return await entityModel.findOne({id: id});
+        return await EntityModel.findOne({id: id});
     },
     async update(id,data){
         const update = {
@@ -38,7 +31,7 @@ const entity = {
             type: data.type,
             isReadonly: data.isReadonly
         }
-        return await entityModel.findOneAndUpdate({id: id},update)
+        return await EntityModel.findOneAndUpdate({id: id},update)
     }
 }
 
@@ -58,4 +51,4 @@ router.delete("/:id",async function(req,res){
     res.status(200).json(await entity.delete(req.params.id));
 })
 
-module.exports = router;
+module.exports = {router, EntityModel};
