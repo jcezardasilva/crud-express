@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, models } = require('mongoose');
 const { v4: uuidv4 } = require('uuid');
 const { calcSkip } = require('../core/skipper');
 const { toProperCase } = require("../core/text");
@@ -17,13 +17,16 @@ function generateSchema(entityFields){
     return new Schema(options,{ versionKey: false });
 }
 function generateModel(path,schema){
-    return model(toProperCase(path),schema, collection = path);
+    const modelName = toProperCase(path);
+    return models[modelName] || model(modelName,schema, collection = path);
 }
 
 async function configure(path){
-    const entity = await EntityModel.findOne({"path": `/${path}`})
+    if(path == "entities") throw Error("entities is a system entity.");
+    const entity = await EntityModel.findOne({"path": path})
+    if(!entity) throw Error("Entity not found.");
     const schema = generateSchema(entity.fields);
-    const Model = generateModel(entity.path.replace("/",""),schema);
+    const Model = generateModel(entity.path,schema);
     return {
         entity,
         Model
